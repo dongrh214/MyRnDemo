@@ -2,7 +2,6 @@
  * Created by dongruihe on 2017/11/30.
  */
 import React, { PureComponent, Component } from 'react'
-import {StackNavigator} from 'react-navigation';
 import {
     Platform,
     StyleSheet,
@@ -10,34 +9,38 @@ import {
     Button,
     View
 } from 'react-native'
+import PropTypes from 'prop-types';
 
 
-const instructions = Platform.select({
-    ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-    android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
-
-class Home extends Component {
+class Layout extends PureComponent {
     static navigationOptions = {
         title: 'Welcome',
     };
     render() {
         const { navigate } = this.props.navigation;
+        const { name, goToHomeDetail, goToProdDetail } = this.props
         return (
             <View style={ styles.container }>
-                <Text>Hello, Chat App!</Text>
+                <Text>接受到的参数: { name }!</Text>
                 <Button
-                    onPress={() => navigate('Chat', { user: 'Lucy' })}
-                    title="Chat with Lucy"
+                    onPress={() => goToHomeDetail({ user: 'Lucy' })}
+                    title="前往HOME详情"
+                />
+                <Button
+                    onPress={() => goToProdDetail({ user: 'Lucy' })}
+                    title="前往PROD详情"
                 />
             </View>
         );
     }
 }
+Layout.propTypes = {
+    name: PropTypes.string.isRequired,
+    goToHomeDetail: PropTypes.func.isRequired,
+    goToProdDetail: PropTypes.func.isRequired,
+};
 
-export default Home;
+export default Layout;
 
 const styles = StyleSheet.create({
     container: {

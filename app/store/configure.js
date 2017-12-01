@@ -3,6 +3,7 @@
  */
 import { applyMiddleware, compose, createStore as createReduxStore } from 'redux'
 import makeRootReducer from '../reducers/root'
+
 const createStore = (initialState = {}) => {
     // ======================================================
     // Middleware Configuration

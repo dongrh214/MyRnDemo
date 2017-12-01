@@ -7,9 +7,9 @@ import {
 } from 'react-native'
 import {TabNavigator,TabBarBottom} from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome'
-import HomeView from '../containers/Home/Home'
-import ProdView from '../containers/Prod/Prod'
-import MineView from '../containers/Mine/Mine'
+import HomeView from '../../Home/container/Home'
+import ProdView from '../../Prod/container/Prod'
+import MineView from '../../Mine/container/Mine'
 
 import {Dimensions} from 'react-native'
 
@@ -35,7 +35,7 @@ class TabBarItem extends PureComponent {
 }
 
 
-const TabScreen = TabNavigator(
+const TabBar = TabNavigator(
     {
         Home:{
             screen:HomeView,
@@ -46,8 +46,8 @@ const TabScreen = TabNavigator(
                     <TabBarItem
                         tintColor={tintColor}
                         focused={focused}
-                        normalImage={() => <Icon name="home" size={px2dp(22)} color="#666"/>}
-                        selectedImage={() => <Icon name="home" size={px2dp(22)} color="#3496f0"/>}
+                        normalImage={() => <Icon name="home" size={px2dp(22)} color="#3496f0"/>}
+                        selectedImage={() => <Icon name="home" size={px2dp(22)} color="#666"/>}
                     />
                 )
             }),
@@ -62,8 +62,8 @@ const TabScreen = TabNavigator(
                     <TabBarItem
                         tintColor={tintColor}
                         focused={focused}
-                        normalImage={() => <Icon name="rocket" size={px2dp(22)} color="#666"/>}
-                        selectedImage={() => <Icon name="rocket" size={px2dp(22)} color="#3496f0"/>}
+                        normalImage={() => <Icon name="rocket" size={px2dp(22)} color="#3496f0"/>}
+                        selectedImage={() => <Icon name="rocket" size={px2dp(22)} color="#666"/>}
                     />
                 )
             }),
@@ -78,8 +78,8 @@ const TabScreen = TabNavigator(
                     <TabBarItem
                         tintColor={tintColor}
                         focused={focused}
-                        normalImage={() => <Icon name="user" size={px2dp(22)} color="#666"/>}
-                        selectedImage={() => <Icon name="user" size={px2dp(22)} color="#3496f0"/>}
+                        normalImage={() => <Icon name="user" size={px2dp(22)} color="#3496f0"/>}
+                        selectedImage={() => <Icon name="user" size={px2dp(22)} color="#666"/>}
                     />
                 )
             }),
@@ -93,8 +93,8 @@ const TabScreen = TabNavigator(
         animationEnabled:false,
         lazy:true,
         tabBarOptions:{
-            activeTintColor:'#06c1ae',
-            inactiveTintColor:'#979797',
+            activeTintColor:'#3496f0',
+            inactiveTintColor:'#666',
             style:{backgroundColor:'#ffffff',},
             labelStyle: {
                 fontSize: 12, // 文字大小
@@ -103,4 +103,4 @@ const TabScreen = TabNavigator(
     }
 );
 
-export default TabScreen
+export default TabBar

@@ -6,30 +6,30 @@ import {
     Platform,
     StyleSheet,
     Text,
+    Button,
     View
 } from 'react-native'
 
-import {NavigationActions} from 'react-navigation';
-import AppNavigator from '../routes/index'
 
+class Prod extends Component {
 
-class MainLayout extends React.Component {
-    someEvent() {
-        // call navigate for AppNavigator here:
-        this.navigator && this.navigator.dispatch(
-            NavigationActions.navigate({ routeName: 'Detail' })
-        );
-    }
     render() {
+        const { navigate } = this.props.navigation;
         return (
-            <AppNavigator ref={nav => { this.navigator = nav; }} />
-        );
+            <View style={styles.container}>
+                <Text style={styles.welcome}>
+                    Prod!
+                </Text>
+                <Button
+                    onPress={() => navigate('ProdDetail', { user: 'Lucy' })}
+                    title="Chat with Lucy"
+                />
+            </View>
+        )
     }
 }
 
-
-
-export default MainLayout
+export default Prod
 
 const styles = StyleSheet.create({
     container: {

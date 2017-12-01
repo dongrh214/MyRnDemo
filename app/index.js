@@ -2,17 +2,21 @@
  * Created by dongruihe on 2017/11/30.
  */
 import React, { PureComponent } from 'react'
-import MainLayout from './layout/MainLayout'
 import { Provider } from 'react-redux'
-import createStore from './store/configure'
-const store = createStore();
+import { createStore } from 'redux';
+import AppNavigatorWithState from './routes/AppNavigator';
+
+import AppReducer from './reducers/root';
+
 
 export default class Root extends PureComponent {
+    store = createStore(AppReducer);
     render() {
         return (
-            <Provider store={store}>
-                <MainLayout />
+            <Provider store={this.store}>
+                <AppNavigatorWithState />
             </Provider>
         )
     }
 }
+
