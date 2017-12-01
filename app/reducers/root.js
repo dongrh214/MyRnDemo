@@ -4,7 +4,6 @@
 import { combineReducers } from 'redux';
 
 import navReducer from './navReducer'
-import authReducer from './authReducers'
 
 
 const makeRootReducer = combineReducers({
