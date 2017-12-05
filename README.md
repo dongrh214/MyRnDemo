@@ -10,7 +10,7 @@
 
 后续运行，正常流程，重新yarn或npm install，再执行npm run boost删除第三方依赖，再运行
 
-集成第三方库
+# 集成第三方库：
 
 react-native-vector-icons：矢量图标库
 
