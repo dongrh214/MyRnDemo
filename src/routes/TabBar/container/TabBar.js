@@ -62,8 +62,8 @@ const TabBar = TabNavigator(
                     <TabBarItem
                         tintColor={tintColor}
                         focused={focused}
-                        normalImage={() => <Icon name="rocket" size={px2dp(22)} color="#3496f0"/>}
-                        selectedImage={() => <Icon name="rocket" size={px2dp(22)} color="#666"/>}
+                        normalImage={() => <Icon name="navicon" size={px2dp(22)} color="#3496f0"/>}
+                        selectedImage={() => <Icon name="navicon" size={px2dp(22)} color="#666"/>}
                     />
                 )
             }),

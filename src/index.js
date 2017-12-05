@@ -3,17 +3,16 @@
  */
 import React, { PureComponent } from 'react'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux';
 import AppNavigatorWithState from './routes/AppNavigator';
 
-import AppReducer from './reducers/root';
+import store from './store/configure'
+
 
 
 export default class Root extends PureComponent {
-    store = createStore(AppReducer);
     render() {
         return (
-            <Provider store={this.store}>
+            <Provider store={store}>
                 <AppNavigatorWithState />
             </Provider>
         )

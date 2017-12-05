@@ -4,10 +4,12 @@
 import { combineReducers } from 'redux';
 
 import navReducer from './navReducer'
+import timer from './timer'
 
 
 const makeRootReducer = combineReducers({
     nav: navReducer,
+    timer
 });
 
 
