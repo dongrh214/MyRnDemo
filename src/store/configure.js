@@ -3,14 +3,14 @@
  */
 import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware, { END } from 'redux-saga';
-import rootReducer from '../reducers/root';
+import makeRootReducer from '../reducers/root';
 import sagas from '../sagas';
 
-const configureStore = preloadedState => {
+const configureStore = (initialState = {}, initialReducer = {}) => {
     const sagaMiddleware = createSagaMiddleware();
     const store = createStore(
-        rootReducer,
-        preloadedState,
+        makeRootReducer(initialReducer),
+        initialState,
         compose (
             applyMiddleware(sagaMiddleware)
         )

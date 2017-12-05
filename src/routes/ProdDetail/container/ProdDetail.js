@@ -19,20 +19,14 @@ class Detail extends Component {
     };
 
     render() {
-        const navigateAction = NavigationActions.navigate({
 
-            routeName: 'Chat',
-
-            params: { user: 'Lily' },
-
-        });
-        // The screen's current route is passed in to `props.navigation.state`:
+        const navigateAction = NavigationActions.back();
         const { params } = this.props.navigation.state;
         return (
             <View  style={ styles.container }>
                 <Text>Accepted Params: {params.user}</Text>
                 <Button
-                    title="NavigationActions"
+                    title="NavigationActions Back"
                     onPress={ () => this.props.navigation.dispatch(navigateAction) }
                 ></Button>
             </View>

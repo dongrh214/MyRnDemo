@@ -7,7 +7,7 @@ import navReducer from './navReducer'
 import timer from './timer'
 
 
-const makeRootReducer = combineReducers({
+const makeRootReducer = (asyncReducers) =>  combineReducers({
     nav: navReducer,
     timer
 });

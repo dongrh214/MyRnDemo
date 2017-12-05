@@ -23,6 +23,8 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
+
+
 class Mine extends Component {
     _onPressReset() {
         this.props.dispatch(reset());
@@ -38,6 +40,7 @@ class Mine extends Component {
 
     render() {
         const { seconds } = this.props.timer;
+        console.log('this:',this)
         return (
             <View style={styles.container}>
                 <Text>saga异步处理测试</Text>
@@ -79,6 +82,7 @@ const styles = StyleSheet.create({
         lineHeight:50
     }
 });
+
 
 const mapStateToProps = state => ({
     timer: state.timer
